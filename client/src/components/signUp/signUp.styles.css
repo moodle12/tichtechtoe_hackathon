@@ -1,0 +1,207 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #bd1a89;
+  --second-color: #843090;
+  --title-color: #843090;
+  --text-color: #843090;
+  --body-color: #01001f;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --h2-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+
+.container__login {
+  width: 100vw;
+  height: 100vh;
+  
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+.login__input,btn,login__buttons,login__button {
+  font-family: var(--body-font);
+  border: none;
+  outline: none;
+}
+
+.login__img {
+  width: 100vw;
+  height: auto;
+}
+
+/*=============== LOGIN FORM ===============*/
+.login__content,
+.login__form,
+.login__inputs {
+  display: grid;
+}
+
+.login__content {
+  padding-left: 50%;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+}
+
+.login__img {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.login__form {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  margin-inline: 1.5rem;
+  row-gap: 1.25rem;
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.login__title {
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.login__title span {
+  color: var(--first-color);
+}
+
+.login__description {
+  font-size: var(--small-font-size);
+  margin-top: -2rem;
+}
+
+.login__inputs {
+  row-gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.login__label {
+  display: block;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 0.25rem;
+}
+
+.login__input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 6px;
+  border: 2px solid var(--text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  transition: border 0.4s;
+}
+
+.login__input::placeholder {
+  color: var(--text-color);
+}
+
+.login__input:focus,
+.login__input:valid {
+  border: 2px solid var(--first-color);
+}
+
+.login__box {
+  position: relative;
+}
+
+.login__box .login__input {
+  padding-right: 36px;
+}
+
+.login__eye {
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.login__check {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+.login__check-input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+}
+
+.login__check-input:checked {
+  background: var(--first-color);
+}
+
+.login__check-input:checked::before {
+  content: '✔️';
+  display: block;
+  color: #843090;
+  font-size: 0.75rem;
+  transform: translate(1.5px, -2.5px);
+}
+
+.login__check-label {
+  font-size: var(--small-font-size);
+}
+
+.login__buttons {
+  display: flex;
+  column-gap: 0.75rem;
+}
+
+.login__button {
+  width: 100%;
+  padding: 14px 2rem;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--first-color), var(--second-color));
+  /* color:  #fff;; */
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 6px 24px hsla(244, 75%, 48%, 0.5);
+  margin-top: -2rem;
+  cursor: pointer;
+}
